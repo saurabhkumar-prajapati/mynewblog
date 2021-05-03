@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+ <div class="col-sm-7 jumbotron container">
+   <h2 class="text-white text-center my-4">Signup Page</h2>
+   {% if messages %}
+     {% for message in messages %}
+       <p {% if message.tags %} class="alert alert-{{message.tags}} mb-4 "  {% endif %}>{{message}}</p>
+
+       {% endfor %}
+     {% endif %}
+   <form  action="" method="post" novalidate>
+     {% csrf_token %}
+     {% for fm in form %}
+       <div class="form-group">
+        {{ fm.label_tag }} {{ fm }}<small class="text-warning"> {{ fm.errors|striptags }}</small>
+       </div>
+     {% endfor %}
+     <div class ="text-center mt-3"><div class="about">
+         <input type="submit" class="btn btn-primary w-25  " value="Submit"></div>
+    </div>
+     {% if form.non_field_errors %}
+       {% for error in form.non_field_errors %}
+          <p class="alert alert-danger my-3">{{ error }}</p>
+       {% endfor %}
+     {% endif %}
+   </form>
+
+
+ </div>
+
+{% endblock content %}

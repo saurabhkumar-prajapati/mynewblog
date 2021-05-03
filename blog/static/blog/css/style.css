@@ -1,0 +1,24 @@
+body{
+background-color:rgb(75,74,74);
+color:antiquewhite;
+}
+.jumbo-color{
+background-color:rgb(83,81,81)
+}
+
+.form-text-color{
+color:#ffffff
+}
+
+/*
+.form-control:focus{
+background:rgb(177,168,168)
+}
+for color change on click and focus
+*/
+
+.form-control{
+background:rgb(177,168,168)
+}
+
+

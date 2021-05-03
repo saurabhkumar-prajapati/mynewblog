@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+ <div class="col-sm-12">
+   <h3 class="text-white mt-3 text-center fw-bold display-3">Home Page</h3>
+     <div class="container mt-3  bg-secondary text-white">
+     {% for post in  posts %}
+         <div class="jumbotron jumbotron-fluid  text-light bg-dark">
+         <div class="container">
+
+          <h1 class="fw-bold ">{{post.title}}</h1>
+          <p style="font-family:"Times New Roman,Times,serif" >{{post.desc}}</p>
+         </div>
+         </div>
+     {% endfor %}</div>
+ </div>
+
+{% endblock content %}
